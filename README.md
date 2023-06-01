@@ -2,7 +2,7 @@
 
 Project provides simple REST endpoint which generates data about user repositories and their branches using GitHub api.
 ## Installing / Getting started
-Since this project is just a demo you can run with either with maven, by typing this into terminal while in project folder:
+Since this project is just a demo, download it and unzip. After that, you can run it either with maven, by typing this into terminal while in project folder:
 ```shell
 ./mvn spring-boot:run
 ```
