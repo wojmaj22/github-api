@@ -15,7 +15,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.ArrayList;
 import java.util.Objects;
 
-// TODO - naprawić 406 error
+// TODO - resolve 406 error
 @RestController
 public class MainController {
 	
