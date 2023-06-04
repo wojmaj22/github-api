@@ -43,4 +43,24 @@ public class Repository {
 	public void setBranches(ArrayList<Branch> branches) {
 		this.branches = branches;
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		
+		Repository that = (Repository) o;
+		
+		if (!login.equals(that.login)) return false;
+		if (!name.equals(that.name)) return false;
+		return branches.equals(that.branches);
+	}
+	
+	@Override
+	public int hashCode() {
+		int result = login.hashCode();
+		result = 31 * result + name.hashCode();
+		result = 31 * result + branches.hashCode();
+		return result;
+	}
 }

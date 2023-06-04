@@ -9,5 +9,4 @@ class GithubapiApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

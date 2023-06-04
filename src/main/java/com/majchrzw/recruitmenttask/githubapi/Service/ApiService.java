@@ -3,6 +3,7 @@ package com.majchrzw.recruitmenttask.githubapi.Service;
 import com.majchrzw.recruitmenttask.githubapi.DTO.Branch;
 import com.majchrzw.recruitmenttask.githubapi.DTO.Repository;
 import com.majchrzw.recruitmenttask.githubapi.DTO.Response;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -14,9 +15,11 @@ public class ApiService {
 
 	private WebClient client;
 	
-	public ApiService( WebClient.Builder webClientBuilder){
-		client = webClientBuilder.baseUrl("https://api.github.com").defaultHeader("accept", "application/json").build();
+	@Autowired
+	public ApiService( WebClient webClient){
+		client = webClient;
 	}
+	
 	
 	public ArrayList<Repository> getListOfRepos(String username){
 		List<Response> list = client.get()

@@ -1,8 +1,10 @@
 package com.majchrzw.recruitmenttask.githubapi.Exception;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.web.HttpMediaTypeException;
 import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -21,8 +23,8 @@ public class RestExceptionHandler {
 	
 	@ResponseBody
 	@ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
-	public ResponseEntity<ExceptionBody> handleResponseStatusException(HttpMediaTypeNotAcceptableException exception){
-		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(new ExceptionBody(HttpStatus.NOT_ACCEPTABLE.toString(), exception.getMessage()));
+	public ResponseEntity<String> handleHttpMediaTypeNotAcceptableException() {
+		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(new ExceptionBody(HttpStatus.NOT_ACCEPTABLE.toString(), "XML not supported").toString());
 	}
 	
 }

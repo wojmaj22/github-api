@@ -20,4 +20,11 @@ public class ExceptionBody {
 		return Message;
 	}
 	
+	@Override
+	public String toString() {
+		return "{\n" +
+				"'status' : '" + status + "',\n" +
+				"'Message' : '" + Message + "'\n" +
+				'}';
+	}
 }
